@@ -1,4 +1,15 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Dependencies } from '@nestjs/common';
+import { AttributesService } from './attributes.service';
 
 @Controller('attributes')
-export class AttributesController {}
+@Dependencies(AttributesService)
+export class AttributesController {
+    constructor(attributesService) {
+        this.attributesService = attributesService
+    }
+
+    @Get()
+    getAttributes() {
+        return this.attributesService.getAttributes();
+    }
+}

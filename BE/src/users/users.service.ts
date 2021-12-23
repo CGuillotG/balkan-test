@@ -21,11 +21,11 @@ export class UsersService {
         case "busy":
           filteredData = filteredData.filter(fdata=> fdata[key] === JSON.parse(queries[key]))
           break;
-        case "age-gte":
-          filteredData = filteredData.filter(fdata=> fdata.age >= queries[key] )
+        case "age-gt":
+          filteredData = filteredData.filter(fdata=> fdata.age > queries[key] )
           break;
-        case "age-lte":
-          filteredData = filteredData.filter(fdata=> fdata.age <= queries[key] )
+        case "age-lt":
+          filteredData = filteredData.filter(fdata=> fdata.age < queries[key] )
           break;
       }
     })

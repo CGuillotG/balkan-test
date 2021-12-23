@@ -12,6 +12,10 @@
 
 .row-Title {
   font-weight: bold;
-  padding-top: 5px;
+  padding-top: 15px;
   padding-bottom: 5px;
+}
+
+.filter-button {
+  margin: 5px;
 }

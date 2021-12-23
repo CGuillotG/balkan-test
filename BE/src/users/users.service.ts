@@ -16,6 +16,11 @@ export class UsersService {
         case "name":
           filteredData = filteredData.filter(fdata=> fdata[key].includes(queries[key]))
           break;
+        case "happy":
+        case "healthy":
+        case "busy":
+          filteredData = filteredData.filter(fdata=> fdata[key] === JSON.parse(queries[key]))
+          break;
       }
     })
     return filteredData

@@ -40,21 +40,21 @@ function App() {
       <Container>
         <h1>Balkan Users</h1>
         <p>Webdev Test by CGuillot</p>
-        <Row>Columns</Row>
+        <Row className="row-Title">Columns</Row>
         <Row>
-          {attributesLoading ? <Spinner animation="border" variant="primary"/> : 
+          {attributesLoading ? <Spinner animation="border" variant="info"/> : 
             <ToggleButtonGroup size="sm" type="checkbox" value={selectedAttributes} onChange={handleAttributeToggle}>
               {attributes.map((attr,i)=>{
-                return <ToggleButton className="columns-button" key={i+attr} id={"tbg-btn-"+i} value={attr} variant="outline-primary">{attr}</ToggleButton>
+                return <ToggleButton className="columns-button" key={i+attr} id={"tbg-btn-"+i} value={attr} variant="outline-info">{attr}</ToggleButton>
               })}
             </ToggleButtonGroup>
           }
         </Row>
-        <Row>Filters</Row>
+        <Row className="row-Title">Filters</Row>
         <Row>
           {(attributesLoading || usersLoading) ? <Spinner animation="border" variant="primary"/> : <></>}
         </Row>
-        <Row>Table</Row>
+        <Row className="row-Title">Table</Row>
         <Row>
           {(attributesLoading || usersLoading) ? <Spinner animation="border"/> : 
             <DynamicTable attributes={attributes} selectedAttributes={selectedAttributes} users={users}></DynamicTable>

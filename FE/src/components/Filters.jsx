@@ -18,12 +18,11 @@ const Filters = ({filters, setFilters}) => {
 
   const addFilter = (attr, value) => {
     if (value === "") {return}
-    if ((attr === "age-gt" || attr === "age-lt") && isNaN(value)) {console.log("Not a number"); return}
+    if ((attr === "age-gt" || attr === "age-lt") && isNaN(value)) {return}
     setFilters(prevFilters => {
       prevFilters[attr] = value
       return { ...prevFilters}
     })
-    console.log(attr, value)
   }
 
   return <>

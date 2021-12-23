@@ -27,15 +27,15 @@ const Filters = ({filters, setFilters}) => {
   }
 
   return <>
-    <Row className="align-items-center justify-content-center">
+    <Row className="align-items-center justify-content-start">
           {!filters["id"] && <TextForm label="ID" button="ID" attribute="id" filterHandler={filterHandler}></TextForm>}
           {!filters["name"] && <TextForm label="Name" button="Name" attribute="name" filterHandler={filterHandler}></TextForm>}
     </Row>
-    <Row className="align-items-center justify-content-center">
+    <Row className="align-items-center justify-content-start">
           {!filters["age-gt"] && <TextForm label="Older than" button="Age" attribute="age-gt" filterHandler={filterHandler}></TextForm>}
           {!filters["age-lt"] && <TextForm label="Younger than" button="Age" attribute="age-lt" filterHandler={filterHandler}></TextForm>}
     </Row>
-    <Row className="align-items-center justify-content-center">
+    <Row className="align-items-center justify-content-start">
           {!filters["happy"] && <BooleanForm label="Happy" button="Happy" attribute="happy" filterHandler={filterHandler}></BooleanForm>}
           {!filters["healthy"] && <BooleanForm label="Healthy" button="Healthy" attribute="healthy" filterHandler={filterHandler}></BooleanForm>}
           {!filters["busy"] && <BooleanForm label="Busy" button="Busy" attribute="busy" filterHandler={filterHandler}></BooleanForm>}

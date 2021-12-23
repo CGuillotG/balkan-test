@@ -9,6 +9,15 @@ export class UsersService {
     return data
   }
   getFilteredUsers(queries) {
-    return "filtered"
+    let filteredData = [...data]
+    Object.keys(queries).forEach(key=>{
+      switch (key) {
+        case "id":
+        case "name":
+          filteredData = filteredData.filter(fdata=> fdata[key].includes(queries[key]))
+          break;
+      }
+    })
+    return filteredData
   }
 }
